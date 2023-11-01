@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../user";
 import {CarService} from "../car.service";
 import {Car} from "../car";
 
@@ -34,10 +33,10 @@ export class CarComponent implements OnInit {
   sortCars(): void {
     if (this.sortDirection === 'asc') {
       // @ts-ignore
-      this.users.sort((a,b) => (a.make > b.make ? -1 : 1));
+      this.cars.sort((a,b) => (a.make > b.make ? -1 : 1));
     } else {
       // @ts-ignore
-      this.users.sort((a,b) => (a.make < b.make ? -1 : 1));
+      this.cars.sort((a,b) => (a.make < b.make ? -1 : 1));
     }
   }
 
