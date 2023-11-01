@@ -1,0 +1,31 @@
+<div class="card my-5" class="centered-heading">
+  <h3>Users List</h3>
+
+  <!-- Search input -->
+  <input
+    [(ngModel)]="searchKeyword"
+    (input)="filterUsers()"
+    placeholder="Search by name..."
+  />
+
+  <!-- Button to toggle sorting order -->
+  <button (click)="toggleSortDirection()">
+    Toggle Sorting Order ({{ sortDirection }})
+  </button>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
